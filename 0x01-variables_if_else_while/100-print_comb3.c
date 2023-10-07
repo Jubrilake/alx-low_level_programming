@@ -20,9 +20,9 @@ int main(void)
 				if (firstNum == '8' && secondNum == '9')
 				{
 					continue;
-					putchar(',');
-					putchar(' ');
 				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
