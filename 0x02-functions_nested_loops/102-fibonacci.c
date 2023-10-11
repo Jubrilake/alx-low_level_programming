@@ -24,10 +24,10 @@ int main(void)
 		{
 			printf("%lu, ", next);
 		}
-		firtname = second;
+		first = second;
 		second = next;
 		next = first + second;
-		count++
+		count++;
 	}
 	return (0);
 }
