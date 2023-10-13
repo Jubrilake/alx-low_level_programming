@@ -9,7 +9,7 @@ int main(void)
 {
 	int c;
 
-	for (c = 1; c <= 100; c++;)
+	for (c = 1; c <= 100; c++)
 	{
 		if (c % 3 == 0 && c % 5 != 0)
 		{
@@ -25,12 +25,13 @@ int main(void)
 		}
 		else if (c == 1)
 		{
-			printf("%d", i);
+			printf("%d", c);
 		}
 		else
 		{
-			printf(" %d", i);
+			printf(" %d", c);
 		}
 	}
 	printf("\n");
+	return (0);
 }
