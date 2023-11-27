@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 {
 	int src, dest, n_read = 1024, wrote, close_src, close_dest;
 	unsigned int mode = S_IRUSR | S_IRGRP | S_IWGRP | S_IROTH;
-	char buffer(1024);
+	char buffer[1024];
 
 	if (argc != 3)
 	{
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	check_IO_stat(dest, -1, argv[2], 'w');
 	while (n_read == 1024)
 	{
-		n_read = read(arc, buffer, sizeof(buffer));
+		n_read = read(src, buffer, sizeof(buffer));
 		if (n_read == -1)
 			check_IO_stat(-1, -1, argv[1], 'o');
 		wrote = write(dest, buffer, n_read);
@@ -45,7 +45,7 @@ int main(int argc, char *argv[])
 }
 
 /**
- * check_IO_statr - funct check if a file can be opened or closed
+ * check_IO_stat - funct check if a file can be opened or closed
  * @stat: file description of file to be opened
  * @filename: name of file
  * @mode: closing or opening
